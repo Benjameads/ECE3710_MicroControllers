@@ -1,0 +1,59 @@
+﻿TA Andrew Gerber                                                                             09/05/2023
+
+
+Lab xx Report
+Benjamin Meads
+A02323437
+Nick Templeton
+A02268123
+
+
+* Objectives
+The student should become familiar with the Tektronix MDO3014 Mixed Domain Oscilloscope, the STMicro STM32L476 Microcontroller Reference Manual, and the STM32 Nucleo-64 Boards User Manual.
+
+
+Procedure
+We followed the instructions from Lab00_Intro.pdf to learn and familiarize ourselves with the documentation of the ARM Cortex-M4 processor, the STM32L476 board and the MDO 3014 Mixed Domain Oscilloscope.
+Results
+First, we searched through the “STM32L476 Reference Manual” in order to find the answers to the questions in the procedure. 
+* 1a:  We found the memory map for the Cortex-M4 processor in Chapter 2.
+* 1b: The base memory address is 0x4800.0800
+* 1c-i: Section 8.4.13 is the GPIO register map
+* 1c-ii: Table 39 is the GPIO register map
+* 1d-i: The name is  GPIOx_MODER, the offset is 0x00, and the absolute is 0x4800.0800
+* 1d-ii: Mode15[1:0] = 01; This stands for general output mode
+* 1d-iii: The binary value is 01010101010101010001010001010100
+* 1d-iv: The hexadecimal value is 55551454
+* 1e: The timer at 0x4000.0400 is Tim 3
+* 1f: The register at offset 0x2C is TIMx_ARR. This register is the value to be loaded in the actual auto-reload register
+
+
+
+
+        Second, we searched through the “STM32 Nucleo-64 Boards User Manual” to answer the questions in the procedure. 
+* 2a: The pin is PA5, and we found this using Table 23.
+* 2b: The reference designator is B1, and it has 4 pins. It’s connected to the microcontroller by pin 2, or PC13.
+* 2c: The reference designator was B2, and the reset is active low.
+* 2d: The four uses were power supply, communication, debugging, and mass storage.
+
+
+
+
+
+
+        Third, we were introduced to the MDO3014 Mixed Domain Oscilloscope. We completed the required readings as well as experimented with the instructions with the oscilloscope in class to familiarize ourselves. Then we were able to complete the required questions.
+* 3a: Required readings and experimenting with physical Oscilloscope
+* 3b-i: Three potential uses for the logic analyzer are troubleshooting, testing embedded systems, and viewing digital waveforms.
+* 3b-ii-1: First you press the “trigger menu” Then you will need to change the type to “edge” signifying that you’d want the trigger to be of an edge type. Then you will change the slope to be a falling edge. 
+* 3b-ii-2: First you press the “trigger menu” Then you will need to change the type to “edge” signifying that you’d want the trigger to be of an edge type. Then you will change the slope to be a rising edge. 
+* 3b-iii: You can either adjust the horizontal scale knob. Or you can push the “Aquire” button and then change “record length”
+* 3n-iv: See Figure-1.
+        
+Figures
+  
+
+Figure 1: Oscilloscope showing a sample period of 200ns
+
+
+Conclusion
+In this lab, we were able to search through the documentation for the processor and the board to find the information that we needed. We have some practice when it comes to addresses and offsets for particular pieces of hardware. We familiarized ourselves with the oscilloscope and how to navigate the menus. We found that the MDO3014 is quite a lot nicer than the oscilloscopes used in the Electrical Circuits labs.
